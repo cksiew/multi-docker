@@ -3,20 +3,20 @@ services:
   - docker
 
 before_install:
-  - docker build -t cksiew/react-test -f ./client/Dockerfile.dev ./client
+  - docker build -t dk081818/react-test -f ./client/Dockerfile.dev ./client
 
 script:
-  - docker run -e CI=true cksiew/react-test npm test -- --coverage
+  - docker run -e CI=true dk081818/react-test npm test -- --coverage
 
 after_success:
-  - docker build -t cksiew/multi-client ./client
-  - docker build -t cksiew/multi-nginx ./nginx
-  - docker build -t cksiew/multi-server ./server
-  - docker build -t cksiew/multi-worker ./worker
+  - docker build -t dk081818/multi-client ./client
+  - docker build -t dk081818/multi-nginx ./nginx
+  - docker build -t dk081818/multi-server ./server
+  - docker build -t dk081818/multi-worker ./worker
   # Log in to the docker CLI
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
   # Take those images and push them to docker hub
-  - docker push cksiew/multi-client
-  - docker push cksiew/multi-nginx
-  - docker push cksiew/multi-server
-  - docker push cksiew/multi-worker
+  - docker push dk081818/multi-client
+  - docker push dk081818/multi-nginx
+  - docker push dk081818/multi-server
+  - docker push dk081818/multi-worker
