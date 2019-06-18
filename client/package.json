@@ -21,9 +21,7 @@
   "browserslist": {
     "production": [
       ">0.2%",
-      "not dead",
-      "android 4",
-      "not op_mini all"
+      "not dead"
     ],
     "development": [
       "last 1 chrome version",
