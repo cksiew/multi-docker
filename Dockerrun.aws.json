@@ -24,7 +24,7 @@
         },
         {
             "name": "nginx",
-            "image": "dk081818/nginx",
+            "image": "dk081818/multi-nginx",
             "hostname": "nginx",
             "essential": true,
             "portMappings":[
